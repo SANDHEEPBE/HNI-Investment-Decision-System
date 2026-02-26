@@ -8,11 +8,11 @@ The HNI Investment Decision Support System (MVP) is a data-driven prototype desi
 
 The system provides:
 
-- Structured investment suggestions across market-capitalization segments  
-- Focused analysis of large-cap global leaders including the “Magnificent Seven”  
-- Quantitative company health scoring  
-- Risk-aware insights using financial fundamentals and market behavior  
-- Visual analytics for decision support  
+- Structured investment suggestions across market-capitalization segments
+- Focused analysis of large-cap global leaders including the “Magnificent Seven”
+- Quantitative company health scoring
+- Risk-aware insights using financial fundamentals and market behavior
+- Visual analytics for decision support
 
 The solution integrates live market data, historical trends, and analytical modeling into a single workflow.
 
@@ -21,35 +21,36 @@ The solution integrates live market data, historical trends, and analytical mode
 ## Objectives
 ---
 
-### Part 1 — Investment Suggestions
-
 Provide curated company recommendations based on market capitalization:
 
-- Magnificent Seven technology leaders  
-- Companies with Market Cap > USD 500 Billion — Top 5  
-- Market Cap USD 100B–500B — Top 7  
-- Market Cap < USD 100B — Top 10  
+- Magnificent Seven technology leaders
+- Companies with Market Cap > USD 500 Billion — Top 5
+- Market Cap USD 100B–500B — Top 7
+- Market Cap < USD 100B — Top 10
 
 Ranking is based on:
 
-- Market strength  
-- Stability  
-- Growth indicators  
-- Liquidity  
-- Risk profile  
+- Market strength
+- Stability
+- Growth indicators
+- Liquidity
+- Risk profile
 
-### Part 2 — Company Health Analysis
+---
 
-**Input:** Company Name or Symbol (e.g., NVDA)
+## Company Health Analysis
+---
 
-**Output:**
+Input: Company Name or Symbol (e.g., NVDA)
 
-- Overall Health Score (%)  
-- Risk Assessment  
-- Growth Indicators  
-- Financial Strength  
-- Cash Flow & Profitability Insights  
-- Pros and Cons for Investment Decision  
+Output:
+
+- Overall Health Score (%)
+- Risk Assessment
+- Growth Indicators
+- Financial Strength
+- Cash Flow & Profitability Insights
+- Pros and Cons for Investment Decision
 
 ---
 
@@ -58,16 +59,16 @@ Ranking is based on:
 
 ### Data Pipeline
 
-- Live price retrieval (latest market snapshot)  
-- Historical data collection  
-- Automated preprocessing and normalization  
-- Integration of live + historical datasets  
+- Live price retrieval (latest market snapshot)
+- Historical data collection
+- Automated preprocessing and normalization
+- Integration of live + historical datasets
 
 **Endpoints / Sources**
 
-- Yahoo Finance API (via yfinance)  
-- Live data fetch module  
-- Historical OHLCV data  
+- Yahoo Finance API (via yfinance)
+- Live data fetch module
+- Historical OHLCV data
 
 ---
 
@@ -88,21 +89,21 @@ Ranking is based on:
 
 ### Statistical Methods
 
-- Trend analysis  
-- Moving averages  
-- Volatility estimation  
+- Trend analysis
+- Moving averages
+- Volatility estimation
 
 ### Machine Learning / AI
 
-- Health scoring model based on weighted financial metrics  
-- Risk categorization  
-- Predictive trend assessment  
+- Health scoring model based on weighted financial metrics
+- Risk categorization
+- Predictive trend assessment
 
 ### Time-Series Considerations
 
-- Historical behavior analysis  
-- Momentum tracking  
-- Short-term vs long-term outlook  
+- Historical behavior analysis
+- Momentum tracking
+- Short-term vs long-term outlook
 
 ---
 
@@ -111,70 +112,99 @@ Ranking is based on:
 
 Health score combines multiple dimensions:
 
-- Revenue growth  
-- Profit margins  
-- Debt ratio  
-- Cash flow strength  
-- Market stability  
-- Risk indicators  
-- Historical performance  
+- Revenue growth
+- Profit margins
+- Debt ratio
+- Cash flow strength
+- Market stability
+- Risk indicators
+- Historical performance
 
 **Score Interpretation**
 
-| Score | Meaning |
-|--------|---------|
+| Score | Interpretation |
+|--------|---------------|
 | 85–100 | Excellent |
 | 70–85 | Good |
 | 50–70 | Moderate |
-| < 50 | High Risk |
+| <50 | High Risk |
 
 ---
 
 ## Visualization Outputs
 ---
 
-The system generates decision-support visuals including:
+The system generates multiple decision-support visuals:
 
-- Market capitalization comparison (Bar Chart)  
-- Segment distribution (Pie Chart)  
-- Historical price trends (Line Chart)  
-- Moving averages (Trend indicators)  
-- Health score comparison across companies  
-- Company-specific analytics dashboard  
-
----
-
-## Technology Stack
----
-
-### Core Technologies
-
-- Python 3.x  
-
-### Data Processing
-
-- Pandas  
-- NumPy  
-
-### Data Acquisition
-
-- yfinance (Yahoo Finance API)  
-
-### Visualization
-
-- Matplotlib  
-
-### Development Environment
-
-- VS Code / Jupyter Notebook  
-- Git & GitHub  
+- Market capitalization comparison (Bar Chart)
+- Segment distribution (Pie Chart)
+- Historical price trends (Line Chart)
+- Moving averages (Trend indicators)
+- Health score comparison across companies
+- Company-specific analytics dashboard
 
 ---
 
-## How to Run the Project
+## System Architecture (MVP)
 ---
 
-### 1. Install Dependencies
+Data Sources → Data Pipeline → Analysis Engine → Scoring Model → Visualization → User Output
 
-```bash
-pip install yfinance pandas numpy matplotlib
+Modules include:
+
+- Data pipeline (live + historical)
+- Classification engine
+- Health scoring engine
+- Visualization module
+- Interactive CLI interface
+
+---
+## Project Structure
+---
+hni-investment-system/
+│
+├── data_pipeline/
+│ └── live_data.py
+│
+├── analysis/
+│ ├── classification.py
+│ └── company_health.py
+│
+├── visualization/
+│ ├── charts.py
+│ └── charts_output/
+│
+├── main.py
+└── README.md
+
+---
+
+## Limitations (MVP)
+---
+
+- Uses public financial data sources
+- Simplified scoring model (not a full institutional valuation model)
+- No portfolio optimization module
+- Forecasting limited to trend-based analysis
+
+---
+
+## Future Enhancements
+---
+
+- Deep learning price forecasting (LSTM/RNN)
+- Portfolio allocation optimization
+- Multi-asset support (bonds, ETFs, commodities)
+- Real-time dashboard (web application)
+- Risk-adjusted return modeling
+- Integration with paid financial APIs
+
+---
+
+## Disclaimer
+---
+
+This system is a prototype developed for evaluation and educational purposes only.  
+It does not constitute financial advice or investment recommendation.
+
+---
