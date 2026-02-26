@@ -157,9 +157,10 @@ Modules include:
 - Health scoring engine
 - Visualization module
 - Interactive CLI interface
-
+---
 ## Project Structure
 ---
+```
 hni-investment-system/
 │
 ├── data_pipeline/
@@ -175,7 +176,7 @@ hni-investment-system/
 │
 ├── main.py
 └── README.md
-
+```
 ---
 
 ## Limitations (MVP)
