@@ -158,7 +158,6 @@ Modules include:
 - Visualization module
 - Interactive CLI interface
 
----
 ## Project Structure
 ---
 hni-investment-system/
